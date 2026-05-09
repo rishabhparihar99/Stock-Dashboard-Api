@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* PURE WHITE BACKGROUND */
+}
+
+.white-mode-wrapper {
+  width: 100vw;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.dense-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.mini-card {
+  /* Background is handled by inline gradient in JSX */
+  border-radius: 4px;
+  padding: 1px 8px;
+  display: flex;
+  align-items: center;
+  width: calc(16.66% - 4px); 
+  height: 30px; 
+  box-sizing: border-box;
+  /* Thin black border to keep the shape defined */
+  border: 1px solid #c6c2c2;
+  transition: transform 0.1s;
+}
+
+.single-line-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.stock-name {
+  color: #000000; /* Bold Black Names */
+  font-weight: 800;
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stats-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.val {
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+/* Neon-style Green and Red for White Background */
+.pos { color: #00aa00; } 
+.neg { color: #ff0000; }
