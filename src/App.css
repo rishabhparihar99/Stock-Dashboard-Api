@@ -5,29 +5,73 @@ html, body {
 }
 
 .white-mode-wrapper {
-  width: 100vw;
-  padding: 8px;
+  width: 100%; /* Change from 100vw to 100% to prevent horizontal scroll */
+  padding: 4px; /* Reduced padding for more screen space */
   box-sizing: border-box;
+  overflow-x: hidden; /* Stops that annoying side-scrolling */
 }
 
 .dense-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
-  justify-content: flex-start;
+  gap: 6px;
+  justify-content: center; /* This centers the tiles, fixing the white-side issue */
+  width: 100%;
 }
 
 .mini-card {
-  border-radius: 4px;
-  padding: 1px 6px;
+  border-radius: 6px;
+  padding: 4px 8px; /* Increased vertical padding */
   display: flex;
   align-items: center;
-  /* Changed to roughly 4 columns (100 / 4 = 25) */
-  width: calc(25% - 4px); 
-  height: 32px; 
+  width: calc(25% - 6px); /* Slightly smaller to increase the gap */
+  height: 42px; /* Increased height so it's less "squashed" */
   box-sizing: border-box;
-  border: 1px solid #c6c2c2;
-  transition: transform 0.1s;
+  border: 1px solid #eef0f2;
+  transition: all 0.2s ease;
+  position: relative;
+  background: #ffffff;
+}
+
+
+/* Update your existing hover rule */
+.mini-card:hover {
+  transform: scale(1.15); /* Slightly bigger zoom for better visibility */
+  z-index: 100; /* Higher z-index to stay above everything */
+  height: auto; /* Allows the card to grow vertically if the name is long */
+  min-height: 45px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  background-color: #ffffff;
+  padding: 6px 10px;
+}
+
+.mini-card:hover .stock-name {
+  white-space: normal; /* Allows text to wrap to a second line on hover */
+  overflow: visible;   /* Shows the full name */
+  text-overflow: clip; /* Removes the dots */
+  font-size: 0.7rem;   /* Slightly larger font during zoom */
+  line-height: 1.1;
+}
+
+/* Keep the stats group aligned at the bottom during zoom */
+.mini-card:hover .single-line-row {
+  flex-direction: column; /* Stacks name above numbers when zoomed */
+  align-items: flex-start;
+  gap: 4px;
+}
+
+/* Ensure names don't blur when scaling */
+.stock-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  color: #1a1a1a;
+  flex: 1;
+  /* This is the magic: it cuts long names with "..." instead of overlapping */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  margin-right: 4px;
 }
 
 /* For smaller mobile screens, drop to 3 columns to prevent distortion */
@@ -49,26 +93,17 @@ html, body {
   white-space: nowrap;
 }
 
-.stock-name {
-  color: #000000; /* Bold Black Names */
-  font-weight: 500;
-  font-family: 'Arial Black', Arial, sans-serif;
-  font-size: 0.55rem;
-  text-transform: uppercase;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .stats-group {
   display: flex;
-  gap: 10px;
+  gap: 6px; /* Reduced gap so numbers stay together */
   align-items: center;
+  flex-shrink: 0; /* Prevents numbers from getting squished */
 }
 
 .val {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 800;
+  font-variant-numeric: tabular-nums; /* Keeps numbers aligned */
 }
 
 /* Neon-style Green and Red for White Background */
