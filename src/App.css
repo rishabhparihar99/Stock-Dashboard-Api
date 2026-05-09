@@ -1,111 +1,145 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff; /* PURE WHITE BACKGROUND */
+  background-color: #ffffff;
+  font-family: 'Inter', -apple-system, sans-serif;
 }
 
 .white-mode-wrapper {
-  width: 100%; /* Change from 100vw to 100% to prevent horizontal scroll */
-  padding: 4px; /* Reduced padding for more screen space */
+  width: 100%;
+  padding: 4px;
   box-sizing: border-box;
-  overflow-x: hidden; /* Stops that annoying side-scrolling */
+  overflow-x: hidden;
 }
 
 .dense-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  justify-content: center; /* This centers the tiles, fixing the white-side issue */
-  width: 100%;
+  justify-content: center;
 }
 
+/* 1. BASE CARD: The clean, original 4-column layout */
 .mini-card {
   border-radius: 6px;
-  padding: 4px 8px; /* Increased vertical padding */
+  padding: 6px 8px;
   display: flex;
   align-items: center;
-  width: calc(25% - 6px); /* Slightly smaller to increase the gap */
-  height: 42px; /* Increased height so it's less "squashed" */
+  width: calc(25% - 6px); 
+  height: 48px;
   box-sizing: border-box;
   border: 1px solid #eef0f2;
-  transition: all 0.2s ease;
-  position: relative;
   background: #ffffff;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden; 
 }
 
-
-/* Update your existing hover rule */
+/* 2. THE POP-UP STATE: Adjusted for better balance */
 .mini-card:hover {
-  transform: scale(1.15); /* Slightly bigger zoom for better visibility */
-  z-index: 100; /* Higher z-index to stay above everything */
-  height: auto; /* Allows the card to grow vertically if the name is long */
-  min-height: 45px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: scale(1.45);
+  z-index: 100;
+  height: 115px; 
+  width: calc(22% - 6px); 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  padding: 12px;
+  overflow: hidden; 
+  border-color: #007bff;
   background-color: #ffffff;
-  padding: 6px 10px;
 }
 
-.mini-card:hover .stock-name {
-  white-space: normal; /* Allows text to wrap to a second line on hover */
-  overflow: visible;   /* Shows the full name */
-  text-overflow: clip; /* Removes the dots */
-  font-size: 0.7rem;   /* Slightly larger font during zoom */
-  line-height: 1.1;
-}
-
-/* Keep the stats group aligned at the bottom during zoom */
-.mini-card:hover .single-line-row {
-  flex-direction: column; /* Stacks name above numbers when zoomed */
-  align-items: flex-start;
-  gap: 4px;
-}
-
-/* Ensure names don't blur when scaling */
-.stock-name {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 0.6rem;
-  color: #1a1a1a;
-  flex: 1;
-  /* This is the magic: it cuts long names with "..." instead of overlapping */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  margin-right: 4px;
-}
-
-/* For smaller mobile screens, drop to 3 columns to prevent distortion */
-@media (max-width: 400px) {
-  .mini-card {
-    width: calc(33.33% - 4px);
-    padding: 1px 4px;
-  }
-  .stock-name {
-    font-size: 0.5rem; /* Slightly smaller text for tiny screens */
-  }
-}
-
+/* 3. ROW & NAME LOGIC */
 .single-line-row {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  white-space: nowrap;
 }
 
+/* Dissolve the row layout on hover to allow absolute positioning of children */
+.mini-card:hover .single-line-row {
+  display: block; 
+}
+
+.stock-name {
+  font-weight: 700;
+  font-size: 0.6rem;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+/* Move Name to Top-Right and scale down on hover */
+.mini-card:hover .stock-name {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  text-align: right;
+  font-size: 0.45rem;
+  white-space: normal;
+  max-width: 65%;
+  line-height: 1.2;
+}
+
+/* 4. RETURNS (STATS) POSITIONING */
 .stats-group {
   display: flex;
-  gap: 6px; /* Reduced gap so numbers stay together */
+  gap: 6px;
   align-items: center;
-  flex-shrink: 0; /* Prevents numbers from getting squished */
 }
 
+/* Stack returns vertically at the bottom-right */
+.mini-card:hover .stats-group {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+/* 5. CHART POSITIONING (LIFTED UP) */
+.hover-chart-wrapper {
+  position: absolute;
+  bottom: 105px; /* Lifted up from the bottom edge */
+  left: 12px;
+  width: 35%; 
+  height: -28px; /* Tucked cleanly on the left */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mini-card:hover .hover-chart-wrapper {
+  opacity: 1;
+  visibility: visible;
+  height: 0.00009px; /* Tucked cleanly on the left */
+}
+
+/* 6. UTILITIES */
 .val {
   font-size: 0.7rem;
   font-weight: 800;
-  font-variant-numeric: tabular-nums; /* Keeps numbers aligned */
+  font-variant-numeric: tabular-nums;
 }
 
-/* Neon-style Green and Red for White Background */
 .pos { color: #00aa00; } 
 .neg { color: #ff0000; }
+
+/* 7. RESPONSIVE (3 COLUMNS) */
+@media (max-width: 400px) {
+  .mini-card {
+    width: calc(33.33% - 6px);
+    height: 42px;
+  }
+  .mini-card:hover {
+    height: 95px;
+    width: calc(45% - 6px);
+  }
+}

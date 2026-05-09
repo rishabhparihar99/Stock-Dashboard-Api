@@ -233,7 +233,7 @@ export const masterSectorMap = {
   "Manappuram Finance": "NBFC",
   "Shriram Finance": "NBFC",
   "Motilal Oswal": "NBFC",
-  "Suryoday SFB": "NBFC",
+  "Suryoday Small Finance Bank Ltd": "NBFC",
   "Poonawalla Fincorp": "NBFC",
   "CreditAccess": "NBFC",
 
@@ -1210,12 +1210,12 @@ export const masterSectorMap = {
 };
 
 export const sectorColors = {
-  "IT": "#818cf8",         // Softer Indigo
-  "ALCOHOL": "#fcd34d",    // Warmer Amber
-  "API": "#e2db4d",        // Softer Pink
-  "AUTO_ANCILLARY": "#bbe585", // Fresher Green
+  "IT": "#5f4539",         // Softer Indigo
+  "ALCOHOL": "#9562d2",    // Warmer Amber
+  "API": "#d37082",        // Softer Pink
+  "AUTO_ANCILLARY": "#f0ec08", // Fresher Green
   "NBFC": "#63c1d8",       // Warmer Yellow
-  "AGRICULTURE": "#34d399", // Fresher Emerald
+  "AGRICULTURE": "#1ce14d", // Fresher Emerald
   "AUTO": "#f87171",       // Softer Red
   "BANK": "#60a5fa",       // Modern Blue
   "SHIPPING": "#776638",     // Modern Amber
@@ -1228,7 +1228,7 @@ export const sectorColors = {
   "E_COMMERCE": "#f9a8d4",     // Softer Pink
   "EV": "#34d399",         // Fresher Emerald
   "GASES": "#22d3ee",      // Modern Cyan
-  "FMCG": "#f87171",       // Softer Red
+  "FMCG": "#ea9516",       // Softer Red
   "GLASS": "#60a5fa",      // Modern Blue
   "LIFE_INSURANCE": "#fcd34d", // Warmer Amber
   "HOSPITALS": "#c035d5",  // Softer Rose
@@ -1242,7 +1242,7 @@ export const sectorColors = {
   "CERAMICS": "#9b9890",     // Modern Amber
   "EDUCATION": "#c5df22",     // Modern Amber
   "JEWELLERY": "#f9a8d4",     // Softer Pink
-  "PHARMA": "#e2d14f",        // Softer Pink
+  "PHARMA": "#d67094",        // Softer Pink
   "POWER": "#facc15",         // Modern Yellow
   "PETROCHEMICALS": "#22d3ee", // Modern Cyan
   "SHIPPING": "#fbbf24",       // Modern Amber
