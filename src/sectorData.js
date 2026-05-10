@@ -1189,7 +1189,7 @@ export const masterSectorMap = {
   "Swiggy": "E_COMMERCE",
   "Honasa Consumer": "E_COMMERCE",
   "MobiKwik": "E_COMMERCE",
-  "Nykaa (Fsn E-Commerce)": "E_COMMERCE",
+  "Fsn E-Commerce Ventures Ltd": "E_COMMERCE",
   "Meesho": "E_COMMERCE",
   "FirstCry (Brainbees)": "E_COMMERCE",
   "Urban Company": "E_COMMERCE",
@@ -1210,22 +1210,22 @@ export const masterSectorMap = {
 };
 
 export const sectorColors = {
-  "IT": "#5f4539",         // Softer Indigo
+  "IT": "#5c3523",         // Softer Indigo
   "ALCOHOL": "#9562d2",    // Warmer Amber
   "API": "#d37082",        // Softer Pink
   "AUTO_ANCILLARY": "#f0ec08", // Fresher Green
-  "NBFC": "#63c1d8",       // Warmer Yellow
+  "NBFC": "#60a5fa",       // Warmer Yellow
   "AGRICULTURE": "#1ce14d", // Fresher Emerald
   "AUTO": "#f87171",       // Softer Red
   "BANK": "#60a5fa",       // Modern Blue
   "SHIPPING": "#776638",     // Modern Amber
-  "FINANCE": "#22d3ee",    // Modern Cyan
-  "CABLES": "#fbbf24",      // Modern Amber
-  "CONS_DURABLES": "#c035d5", // Softer Rose
+  "FINANCE": "#60a5fa",    // Modern Cyan
+  "CABLES": "#cdee3c",      // Modern Amber
+  "CONS_DURABLES": "#a82703", // Softer Rose
   "CRUDE_OIL_GAS": "#3cdf2e", // Modern Orange
-  "ELECTRICAL": "#a78bfa", // Softer Violet
+  "ELECTRICAL": "#b677dd", // Softer Violet
   "EDIBLE_OILS": "#fbbf24", // Modern Amber
-  "E_COMMERCE": "#f9a8d4",     // Softer Pink
+  "E_COMMERCE": "#ee0933",     // Softer Pink
   "EV": "#34d399",         // Fresher Emerald
   "GASES": "#22d3ee",      // Modern Cyan
   "FMCG": "#ea9516",       // Softer Red
@@ -1241,34 +1241,34 @@ export const sectorColors = {
   "CONSTRUCTION": "#cec7c1",  // Softer Orange
   "CERAMICS": "#9b9890",     // Modern Amber
   "EDUCATION": "#c5df22",     // Modern Amber
-  "JEWELLERY": "#f9a8d4",     // Softer Pink
+  "JEWELLERY": "#e3a517f3",     // Softer Pink
   "PHARMA": "#d67094",        // Softer Pink
   "POWER": "#facc15",         // Modern Yellow
   "PETROCHEMICALS": "#22d3ee", // Modern Cyan
-  "SHIPPING": "#fbbf24",       // Modern Amber
+  "SHIPPING": "#0abdf9",       // Modern Amber
   "LOGISTICS": "#22d3ee",      // Modern Cyan
   "PLASTIC": "#34d399",        // Fresher Emerald
   "PAINTS": "#f87171",        // Softer Red
   "RATINGS": "#d95245",       // Modern Amber
   "REALTY": "#fbbf24",        // Modern Amber
   "RETAIL": "#f87171",        // Softer Red,
-  "TEXTILE": "#c035d5",      // Softer Rose
+  "TEXTILE": "#d6c3d9",      // Softer Rose
   "TELECOM": "#60a5fa",      // Modern Blue
   "TRADING_SERVICES": "#22d3ee", // Modern Cyan
   "TRADING": "#fbbf24",       // Modern Amber
   "TYRES": "#f87171",        // Softer Red
   "WATER_WASTE": "#34d399",  // Fresher Emerald
-  "RAILWAYS": "#60a5fa",      // Modern Blue
-  "SOLAR": "#fbbf24",         // Modern Amber
-  "PSU": "#22d3ee",           // Modern Cyan
+  "RAILWAYS": "#ca3a8c",      // Modern Blue
+  "SOLAR": "#30d9f4",         // Modern Amber
+  "PSU": "#c400c8",           // Modern Cyan
   "REFRACTORIES": "#a78bfa",  // Softer Violet
   "RUBBER_BELTS": "#34d399", // Fresher Emerald
   "SUGAR_ETHANOL": "#fbbf24", // Modern Amber
-  "METALS": "#60a5fa",        // Modern Blue
+  "METALS": "#95e652",        // Modern Blue
   "RETAIL_FASHION": "#f9a8d4", // Softer Pink
-  "PAPER_CARTELS": "#8b5cf6",   // Modern Violet
+  "PAPER_CARTELS": "#3fe544",   // Modern Violet
   "RETAIL_LEATHER": "#60a5fa", // Modern Blue
-  "DEFENCE": "#94a3b8",       // Modern Grey/Slate
+  "DEFENCE": "#667077",       // Modern Grey/Slate
   "DIVERSIFIED": "#22d182",   // Modern Amber
   "CONSUMER": "#fda4af",      // Softer Rose
   "DEFAULT": "#475569"        // Medium Slate
