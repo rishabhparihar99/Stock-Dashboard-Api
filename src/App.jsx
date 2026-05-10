@@ -29,7 +29,7 @@ const MiniSparkline = ({ historyString, isPositive }) => {
   const strokeColor = isPositive ? '#00aa00' : '#ff0000';
 
   return (
-    <div className="chart-container">
+    <div className="chart-container" tabIndex="-1">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data}>
           <defs>
