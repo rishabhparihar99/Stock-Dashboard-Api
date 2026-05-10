@@ -89,7 +89,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div className="loading-container"><h3>Syncing with Google Sheets...</h3></div>;
+    return <div className="loading-container"><h3>Please Wait...</h3></div>;
   }
 
   return (
